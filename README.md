@@ -2,6 +2,9 @@
 
 Proste skrypty ułatwiające pracę sprzedawców ALLEGRO - odpytują serwer ALLEGRO w temacie nowych wiadomości prywatnych i dyskusji, po czym jeśli takowe są wysyłają automatyczne odpowiedzi z zapewnieniem kontaktu w późnijszym terminie.
 
+Zasada działania. W pierwszej kolejności należy zarejestrować aplikację w sekcji dla developeróœ allegro api. Następnie po otrzymaniu danych autoryzacyjnych aplikacji, następuje autoryzacja konta i przedłużenie tokena autoryzacji o 3 miesiące. Trzeba pamiętać aby po upływie 3 miesięcy ponownie autoryzować token (lub wrzucić to do zadań CRON).
+Skrypty korzystając z ALLEGRO API odpytują serwer o nowe wiadomości, i jeśli takie są to udzielają automatycznej odpowiedzi. Udzielenie odpowiedzi nie zmienia statusu wiadomości od klienta (wciąż widnieją dla operatora jako nieprzeczytane).
+
 1. Zarejestrować aplikację w ALLEGRO API - potwierdzenie tożsamości na urządzenie - device
 2. Wpisać dane tożsamości do pliku "app.id"
 3. Uruchomiść skrypt ./auth.sh - wejść na adres wygenerowany przez skrypt i potwierdzić powiążanie aplikacji, następnie wrócić do skryptu i potwierdzić dalsze działanie

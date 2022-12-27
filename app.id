@@ -1,0 +1,7 @@
+# CID - client-id aplikacji allego
+# CIS - client-secret aplikacji allegro
+# client-id oraz client-secret generuje allegro przy tworzeniu nowej aplikacji w środowisku deweloperskim Allegro
+# aplikacja autoryzowana na urządzenie - device
+
+CID=
+CIS=

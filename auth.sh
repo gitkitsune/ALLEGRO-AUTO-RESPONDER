@@ -1,4 +1,5 @@
 #!/bin/bash
+# AUTHOR - Jarosław Strauchmann (jaroslaw.strauchmann@gmail.com)
 
 source ./app.id
 

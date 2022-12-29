@@ -16,6 +16,9 @@ then
 	$1'refresh.sh' $1
 else
 
+NEW_DATE=`date -uIs | cut -c 1-19`
+LAST_TIME=`cat $1'date.var' | cut -c 1-19`
+
 cat $1'message.tmp' | sed -e 's/{"id":/\n/g' \
  | sed -e 's/]/\n/g' \
  | sed -e 's/"//g' \
@@ -25,9 +28,6 @@ cat $1'message.tmp' | sed -e 's/{"id":/\n/g' \
  | sed -e 's/lastMessageDateTime://g' \
  | sed -e 's/interlocutor:login://g' \
  | grep false > $1'message.tmp'
-
-NEW_DATE=`date -Is | cut -c 1-19`
-LAST_TIME=`cat $1'date.var' | cut -c 1-19`
 
 while [[ -s $1'message.tmp' ]]
 do

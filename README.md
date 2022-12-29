@@ -7,7 +7,7 @@ Skrypty działają w systemach UNIX (testowane na linux), tak więc bez problemu
 Zasada działania:
 1. W pierwszej kolejności należy zarejestrować aplikację w sekcji dla developerów allegro api. Aplikacja wymaga potwierdzenia tożsamości na poziomie urządzenia - device
 2. Następnie po otrzymaniu danych autoryzacyjnych aplikacji, należy przeprowadzić autoryzacje aplikacji na koncie użytkownika. Dane aplikacji należy wpisać do app.id i uruchomić ./auth.sh skrypt odpyta allegro i wyświetli wygenerowany link na który należy wejść, i logując się na konto allegro potwierdzić powiązanie aplikacji.
-3. W pliku date.var wpisać datę i godzinę od której chcemy aby skrypt generował automatyczne odpowiedzi (format Is)
+3. W pliku date.var wpisać datę i godzinę od której chcemy aby skrypt generował automatyczne odpowiedzi (format ISO 8601 'date -uIs')
 4. Pozostaje jeszcze dodać do zadań CRON nasze skrypty. 
 
 */30 * * * * dispute.sh FOLDER/ #Działanie co 30 minut (zmienić wedle uznania)

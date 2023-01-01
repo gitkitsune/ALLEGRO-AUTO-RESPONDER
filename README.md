@@ -25,3 +25,5 @@ Tam znajdziesz "chat" i zaraz za nim ID. Token bota, oraz chat ID wpisz w pliku 
 
 Wyedytuj skrypt message.sh oraz dispute.sh usuwająs hash "#" z linii:
 # curl -s --data "text=$PAI" --data "chat_id=$CHATID" 'https://api.telegram.org/bot'$BOTID'/sendMessage' > /dev/null
+
+Uwaga - nie wszystkie serwisy hostingowe pozwalaja na dostęp przez SSH, i uruchamianie aplikacji konsolowych. Jesli twój hosting umozliwia na wykonywanie komend własych z poziomu CRON ale nie daje możliwości pracy przez SSH, to możesz dokonać autoryzacji (plik auth.sh) na dowolnym systemie linux. Może to być maszyna wirtualna, może być to środowisko uruchamiane z USB. Po przeprowadzeniu autoryzacji wystarczy przegrać wszystkie pliki na katalog na serwerze (pamiętając aby w uprawnieniach plików *.sh ustawić możliwość uruchamiania (chmod 777).

@@ -22,7 +22,8 @@ COUNT=$3
 fi
 
 #Do momentu osiągnięcia 100 odpowiedzi, automat odpowiada tylko na nieprzeczytane wiadomości. Potem odpowiada nawet na otwarte, ale bez udzielonej odpowiedzi.
-if [ $LINES -lt 90 ];
+CHANGE=$(( $COUNT - 10 ))
+if [ $LINES -lt $CHANGE ];
 then
 GREP='false'
 else
@@ -51,8 +52,7 @@ cat $1'msg.tmp' | sed -e 's/{"id":/\n/g' \
  | sed -e 's/lastMessageDateTime://g' \
  | sed -e 's/interlocutor:login://g' \
  | sed 1d | sed '$d' \
- | grep 'read' > $1'msg.tmp'
-
+ | grep $GREP > $1'msg.tmp'
 
 #Sprawdza wiadomości, i jesli brak odpowiedzi to jej udziela.
 while [[ -s $1'msg.tmp' ]]

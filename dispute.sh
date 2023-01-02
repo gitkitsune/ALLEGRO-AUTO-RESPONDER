@@ -13,14 +13,17 @@ curl -X GET \
 
 if grep expired $1'dispute.tmp'
 then
+	echo "TOKEN PROBLEM"
 	$1'refresh.sh' $1
 else
 
+cat $1'dispute.tmp' > $1'dispute.test.tmp'
 cat $1'dispute.tmp' | sed -e 's/{"id":"/\n/g' \
 | sed -e 's/","subject":/ /g' \
 | grep -E "NEW|BUYER_REPLIED" \
 | grep ONGOING \
 | awk '{print $1}' > $1'dispute.tmp'
+
 
 while [[ -s $1'dispute.tmp' ]]
 do
@@ -44,8 +47,8 @@ then
 exit 0
 else
 SEL=`echo $1 | sed -e 's/[[:punct:]]//g'`
-PAI=`echo -e "Konto $SEL:\n$BOT dyskusje oczekują na reakcje."`
-# curl -s --data "text=$PAI" --data "chat_id=$CHATID" 'https://api.telegram.org/bot'$BOTID'/sendMessage' > /dev/null
+PAI=`echo -e "Konto $SEL:\nNowych zdarzeń w dyskusjach: $BOT"`
+curl -s --data "text=$PAI" --data "chat_id=$CHATID" 'https://api.telegram.org/bot'$BOTID'/sendMessage' > /dev/null
 fi
 fi
 

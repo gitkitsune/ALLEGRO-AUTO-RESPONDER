@@ -14,6 +14,11 @@ Można też dodać argument w linii poleceń:
 - ILOŚĆ - należy podać liczbowo ile wątków ma pobierać skrypt do sprawdzania - domyślnie 10 (maksymalnie 20)
 - LICZNIK - należy podać liczbowo ile pobranych wiadomości ma zachowywać lista - domyślnie 100
 
+Dodant skrypt del.sh - umożliwia jednostronne (niestety) usunięcie wiadomości z listy, użycie
+./del.sh FOLDER LOGIN
+- FOLDER - katalog roboczy w którym znajdują się pliki 
+- LIGIN - login kupującego, dla którego chcemy usunąć wiadomosci, może byc problem ze znakami specjalnymi, ale zwykle wystarczy część nazwy loginu aby skrypt zadziałał (uwaga, jeśli wpisany ciąg znaków można przyporządkować również do innego loginu, to usunie równiez i te wiadomości)
+
 v 1.0
 
 Zasada działania:
